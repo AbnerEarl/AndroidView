@@ -45,8 +45,8 @@
        		 android:layout_width="wrap_content"
        		 <!--设置要显示的图片资源，这里不止这一种方法，根据需要进行使用-->
         	 app:imageSrc="@drawable/test"
-        	<!--设置模糊程度，数值越大，越模糊，1代表不模糊-->
-        	app:inSampleSize="1">
+        		<!--设置模糊程度，数值越大，越模糊，1代表不模糊-->
+        		app:inSampleSize="1">
 
    	 </com.frank.ycj520.customview.circleImageView>
 	 
