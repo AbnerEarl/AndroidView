@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="circleImageView">
+    <declare-styleable name="CircleImageView">
         <attr name="imageSrc" format="reference"/>
         <attr name="inSampleSize" format="integer"/>
     </declare-styleable>
+
+    <declare-styleable name="BrokenLineView2">
+        <attr name="linePaintColor" format="color" />
+        <attr name="textPaintColor" format="color" />
+        <attr name="textPaintSize" format="dimension" />
+        <attr name="circlePaintColor" format="color" />
+        <attr name="circleRadius" format="dimension" />
+        <attr name="textVerticesPaintColor" format="color" />
+        <attr name="textVerticesPaintSize" format="dimension" />
+        <attr name="brokenLinePaintColor" format="color" />
+        <attr name="lineWidth" format="dimension" />
+    </declare-styleable>
+
 </resources>

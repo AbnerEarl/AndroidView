@@ -4,27 +4,26 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.*;
 import android.util.AttributeSet;
-import android.util.TypedValue;
 import android.view.View;
 
-public class circleImageView extends View{
+public class CircleImageView extends View{
     private Paint mPaint;
     private Bitmap imageBitmap;
     private float circleRadio;
     private int imageResourceId;
     private int mInSampleSize=1;
     private int mWidth;
-    public circleImageView(Context context,int width) {
+    public CircleImageView(Context context, int width) {
         super(context);
         mPaint=new Paint();
         mWidth=width;
     }
 
-    public circleImageView(Context context, AttributeSet attrs) {
+    public CircleImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
         System.out.println("圆的历程"+"circleImageView");
         mPaint=new Paint();
-        TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.circleImageView, 0, 0);
+        TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CircleImageView, 0, 0);
         System.out.println("imageResourceId="+imageResourceId);
         int n = a.getIndexCount();
         for (int i = 0; i < n; i++)
@@ -43,11 +42,11 @@ public class circleImageView extends View{
             }*/
 
             //获取图片id
-            if (attr == R.styleable.circleImageView_imageSrc) {
+            if (attr == R.styleable.CircleImageView_imageSrc) {
                 imageResourceId = a.getResourceId(attr, R.drawable.default_img);
 
                 //获取图片清晰度设置
-            } else if (attr == R.styleable.circleImageView_inSampleSize) {
+            } else if (attr == R.styleable.CircleImageView_inSampleSize) {
                 mInSampleSize = a.getInteger(attr, 1);
 
             }
