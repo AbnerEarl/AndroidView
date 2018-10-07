@@ -60,7 +60,7 @@
 
 	<com.frank.ycj520.customview.BrokenLineView1
        	android:layout_width="wrap_content"
-        	 android:layout_height="wrap_content" />
+        	android:layout_height="wrap_content" />
 		 
 		 
 在Activity中加载数据：
