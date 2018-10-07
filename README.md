@@ -4,7 +4,7 @@
 
 # 最新版本
 
-版本号：[![](https://www.jitpack.io/v/YouAreOnlyOne/AndroidHttp.svg)](https://www.jitpack.io/#YouAreOnlyOne/AndroidHttp)
+版本号：[![](https://www.jitpack.io/v/YouAreOnlyOne/AndroidView.svg)](https://www.jitpack.io/#YouAreOnlyOne/AndroidView)
 
 使用自行替换下面的版本号，以获得最新版本。
 
