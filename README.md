@@ -59,14 +59,14 @@
 在xml文件中引用View：
 
 	<com.frank.ycj520.customview.BrokenLineView1
-       		android:layout_width="wrap_content"
+       	android:layout_width="wrap_content"
         	 android:layout_height="wrap_content" />
 		 
 		 
 在Activity中加载数据：
 
 	BrokenLineView brokenview= (BrokenLineView) findViewById(R.id.chartView);
-       brokenview.SetInfo(
+	brokenview.SetInfo(
                 new String[]{"周一","周二","周三","周四","周五","周六","周日"},   //X轴刻度
                 new String[]{"","50","100","150","200","250","300","350"},   //Y轴刻度
                 new String[]{"150","230","10","136","45","40","112","313"},  //数据
