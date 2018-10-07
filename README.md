@@ -34,3 +34,22 @@
             ...
      }
     
+# 使用示例
+
+在任何布局文件中，即Activity所装载的 xml 文件中进行引用，跟普通的View控件没有什么区别，举例如下：
+
+	<com.frank.ycj520.customview.circleImageView
+      		 <!--设置控件高度-->
+      		 android:layout_height="wrap_content"
+       		 <!--设置控件高度-->
+       		 android:layout_width="wrap_content"
+       		 <!--设置要显示的图片资源，这里不止这一种方法，根据需要进行使用-->
+        	 app:imageSrc="@drawable/test"
+        	<!--设置模糊程度，数值越大，越模糊，1代表不模糊-->
+        	app:inSampleSize="1">
+
+   	 </com.frank.ycj520.customview.circleImageView>
+	 
+	 注意：使用时候，可能要去掉注释内容，以免编译出错。
+	 
+	 
