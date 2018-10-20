@@ -30,7 +30,7 @@
 
     dependencies {
             ...
-            implementation 'com.github.YouAreOnlyOne:AndroidHttp:版本号'
+            implementation 'com.github.YouAreOnlyOne:AndroidView:版本号'
             ...
      }
     
