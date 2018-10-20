@@ -18,4 +18,13 @@
         <attr name="lineWidth" format="dimension" />
     </declare-styleable>
 
+    <declare-styleable name="WaveView">
+        <attr name="waveLength" format="dimension"/>
+        <attr name="rise" format="boolean"/>
+        <attr name="boatBitmap" format="reference"/>
+        <attr name="originY" format="dimension"/>
+        <attr name="waveHeight" format="dimension"/>
+        <attr name="duration" format="dimension"/>
+    </declare-styleable>
+
 </resources>
