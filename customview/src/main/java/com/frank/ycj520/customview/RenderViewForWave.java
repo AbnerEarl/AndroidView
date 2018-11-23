@@ -17,9 +17,9 @@ import android.util.AttributeSet;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-public class RenderView extends SurfaceView implements SurfaceHolder.Callback {
+public class RenderViewForWave extends SurfaceView implements SurfaceHolder.Callback {
 
-    private static final String TAG=RenderView.class.getSimpleName();
+    private static final String TAG= RenderViewForWave.class.getSimpleName();
     private static final Object mSurfaceLock=new Object();
     private RenderThread renderThread;
 
@@ -45,15 +45,15 @@ public class RenderView extends SurfaceView implements SurfaceHolder.Callback {
     private final int mCenterPathColor=Color.argb(64,255,255,255);
 
 
-    public RenderView(Context context) {
+    public RenderViewForWave(Context context) {
         this(context,null);
     }
 
-    public RenderView(Context context, AttributeSet attrs) {
+    public RenderViewForWave(Context context, AttributeSet attrs) {
         this(context, attrs,0);
     }
 
-    public RenderView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public RenderViewForWave(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
