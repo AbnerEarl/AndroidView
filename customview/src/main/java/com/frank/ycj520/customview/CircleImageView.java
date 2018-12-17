@@ -88,6 +88,10 @@ public class CircleImageView extends View{
         }
     }
 
+    public void setImageUri(){
+
+    }
+
     //动态设置图片清晰度
     public void setSimpleSize(int size){
         System.out.println("圆的历程"+"setSimpleSize");
