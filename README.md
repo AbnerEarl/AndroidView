@@ -1,5 +1,5 @@
 # AndroidView
-自定义控件的使用与封装，包括各种原形图片、柱状图、折线图、饼图、组合图形以及复杂的控件特效等等，是现在在Android开发中直接引用。
+Android中自定义控件的使用与封装，包括各种原形图片、柱状图、折线图、饼图、组合图形以及复杂的控件特效等等，是现在在Android开发中直接引用。
 
 
 # 最新版本
@@ -72,4 +72,20 @@
                 new String[]{"150","230","10","136","45","40","112","313"},  //数据
                 "图标的标题"
         );
+
+# 主要控件
+
+CircleImageView  自动把图片转换为圆形图片
+
+BrokenLineView1  数据自动生成折线图，风格1
+
+BrokenLineView2  数据自动生成折线图，风格2
+
+MyRadioGroup  自动对RadioGroup中的RadioButton进行按行或者按列排列
+
+RenderViewForWave  
+
+WaveView 单曲线水波纹效果➕图像跳动
+
+WaveViewForDouble 双曲线水波纹滑动效果➕渐变填充
 
