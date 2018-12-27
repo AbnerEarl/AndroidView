@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="CircleImageView">
+    <declare-styleable name="CircleImageView2">
         <attr name="imageSrc" format="reference"/>
         <attr name="inSampleSize" format="integer"/>
     </declare-styleable>
