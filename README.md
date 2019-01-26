@@ -74,6 +74,33 @@ Android中自定义控件的使用与封装，包括各种原形图片、柱状�
         );
 	
 	
+		 
+## 文字滚动显示：
+
+在xml文件中引用View：
+
+	<com.frank.ycj520.customview.ScrollTextView
+            android:id="@+id/item_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:singleLine="true"
+            customAttr:clickEnable="true"
+            customAttr:isHorizontal="true"
+            customAttr:speed="2"
+            customAttr:text="It is default text"
+            customAttr:text_color="#ffffffff"
+            customAttr:text_size="16sp"
+            customAttr:times="567" />
+		 
+		 
+在Activity中设置文字滚动方向：
+
+	ScrollTextView scrollTextView1=findViewById(R.id.item1).findViewById(R.id.item_content);
+        scrollTextView1.setText("我是一只小小鸟，怎么飞也飞不高。");
+        scrollTextView1.setHorizontal(false);
+	
+	
 ## 选择器在项目中的使用（支持联动）
 
 #### 有时间选择器和选项选择器
