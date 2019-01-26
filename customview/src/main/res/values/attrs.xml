@@ -52,4 +52,14 @@
         <attr name="wheelview_dividerColor" format="color"/>
         <attr name="wheelview_lineSpacingMultiplier" format="float"/>
     </declare-styleable>
+
+    <declare-styleable name="ScrollText">
+        <attr name="clickEnable" format="boolean" />
+        <attr name="isHorizontal" format="boolean" />
+        <attr name="speed" format="integer" />
+        <attr name="text" format="string" />
+        <attr name="text_color" format="color" />
+        <attr name="text_size" format="dimension" />
+        <attr name="times" format="integer" />
+    </declare-styleable>
 </resources>
