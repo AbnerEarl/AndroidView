@@ -344,7 +344,7 @@ TimePickerView —— 时间选择器
 
 还有更多组件，详细使用，请看使用手册。
 
-使用手册(https://github.com/YouAreOnlyOne/AndroidView/blob/master/source/UsersGuidance.md)
+[使用手册](https://github.com/YouAreOnlyOne/AndroidView/blob/master/source/UsersGuidance.md)
 
 
 # 其它信息
