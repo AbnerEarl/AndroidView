@@ -340,7 +340,11 @@ TimePickerView —— 时间选择器
 支持自定义设置容器。
 支持实时回调监听。
 
+# 更多
 
+还有更多组件，详细使用，请看使用手册。
+
+使用手册(https://github.com/YouAreOnlyOne/AndroidView/blob/master/source/UsersGuidance.md)
 
 
 # 其它信息
