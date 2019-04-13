@@ -62,4 +62,81 @@
         <attr name="text_size" format="dimension" />
         <attr name="times" format="integer" />
     </declare-styleable>
+
+    <declare-styleable name="DYLoadingView">
+        <attr name="radius1" format="dimension"/>
+        <attr name="radius2" format="dimension"/>
+        <attr name="gap" format="dimension"/>
+        <attr name="rtlScale" format="float"/>
+        <attr name="ltrScale" format="float"/>
+        <attr name="color1" format="color"/>
+        <attr name="color2" format="color"/>
+        <attr name="mixColor" format="color"/>
+        <attr name="duration_dy" format="integer"/>
+        <attr name="pauseDuration" format="integer"/>
+        <attr name="scaleStartFraction" format="float"/>
+        <attr name="scaleEndFraction" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="PureVerticalSeekBar">
+        <attr name="vertical_color" format="color" />
+        <attr name="circle_radius" format="dimension" />
+        <attr name="circle_color" format="color" />
+        <attr name="dragable" format="boolean" />
+        <attr name="image_thumb" format="reference" />
+        <attr name="image_progressbar" format="reference" />
+        <attr name="max_progress" format="integer"/>
+        <attr name="min_progress" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="RopeProgressBar">
+        <attr name="ropeMax" format="integer"/>
+        <attr name="ropeProgress" format="integer"/>
+        <attr name="ropePrimaryColor" format="color"/>
+        <attr name="ropeSecondaryColor" format="color"/>
+        <attr name="ropeSlack" format="dimension"/>
+        <attr name="ropeStrokeWidth" format="dimension"/>
+        <attr name="ropeDynamicLayout" format="boolean"/>
+    </declare-styleable>
+
+    <attr name="mwhWaves" format="string|enum">
+        <enum name="MultiWave" value="-1"/>
+        <enum name="PairWave" value="-2"/>
+    </attr>
+    <declare-styleable name="MultiWaveHeader">
+        <attr name="mwhWaveHeight" format="dimension"/>
+        <attr name="mwhStartColor" format="color"/>
+        <attr name="mwhCloseColor" format="color"/>
+        <attr name="mwhIsRunning" format="boolean"/>
+        <attr name="mwhColorAlpha" format="fraction|float"/>
+        <attr name="mwhProgress" format="fraction|float"/>
+        <attr name="mwhVelocity" format="fraction|float"/>
+        <attr name="mwhGradientAngle" format="integer"/>
+        <attr name="mwhWaves"/>
+    </declare-styleable>
+
+    <declare-styleable name="MiClockView">
+        <attr name="backgroundColor" format="color" />
+        <attr name="lightColor" format="color" />
+        <attr name="darkColor" format="color" />
+        <attr name="textSize" format="dimension" />
+    </declare-styleable>
+
+    <!--边缘透明View-->
+    <declare-styleable name="EdgeTransparentView">
+        <attr name="edge_position">
+            <flag name="top" value="0x01"/>
+            <flag name="bottom" value="0x02"/>
+            <flag name="left" value="0x04"/>
+            <flag name="right" value="0x08"/>
+        </attr>
+
+        <attr name="edge_width" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="CircleLayout">
+        <attr name="radium" format="dimension"/>
+        <attr name="changeCorner" format="float"/>
+    </declare-styleable>
+
+
 </resources>

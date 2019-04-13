@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         //setContentView(new WaveViewForDouble(this));
-        setContentView(new RenderViewForWave( this));
+//        setContentView(new RenderViewForWave( this));
 
         /*setContentView(R.layout.activity_main);
         waveView=(WaveView)findViewById(R.id.waveView);
