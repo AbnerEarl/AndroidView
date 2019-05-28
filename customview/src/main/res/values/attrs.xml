@@ -138,5 +138,194 @@
         <attr name="changeCorner" format="float"/>
     </declare-styleable>
 
+    <declare-styleable name="CommonShapeButton">
+        <!--shape模式-->
+        <attr name="csb_shapeMode" format="enum">
+            <enum name="rectangle" value="0" />
+            <enum name="oval" value="1" />
+            <enum name="line" value="2" />
+            <enum name="ring" value="3" />
+        </attr>
+        <!--填充颜色-->
+        <attr name="csb_fillColor" format="color" />
+        <!--按压颜色-->
+        <attr name="csb_pressedColor" format="color" />
+        <!--描边颜色-->
+        <attr name="csb_strokeColor" format="color" />
+        <!--描边宽度-->
+        <attr name="csb_strokeWidth" format="dimension" />
+        <!--圆角大小-->
+        <attr name="csb_cornerRadius" format="dimension" />
+        <!--圆角位置-->
+        <attr name="csb_cornerPosition">
+            <flag name="topLeft" value="1" />
+            <flag name="topRight" value="2" />
+            <flag name="bottomRight" value="4" />
+            <flag name="bottomLeft" value="8" />
+        </attr>
+        <!--是否开启动效-->
+        <attr name="csb_activeEnable" format="boolean" />
+        <!--drawable位置-->
+        <attr name="csb_drawablePosition" format="enum">
+            <enum name="left" value="0" />
+            <enum name="top" value="1" />
+            <enum name="right" value="2" />
+            <enum name="bottom" value="3" />
+        </attr>
+        <!--渐变开始颜色-->
+        <attr name="csb_startColor" format="color" />
+        <!--渐变结束颜色-->
+        <attr name="csb_endColor" format="color" />
+        <!--渐变方向-->
+        <attr name="csb_orientation" format="enum">
+            <enum name="TOP_BOTTOM" value="0" />
+            <enum name="LEFT_RIGHT" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="RainView">
+        <attr name="rainNum" format="integer" />
+        <attr name="randColor" format="boolean" />
+        <attr name="size" format="integer" />
+        <attr name="rainColor" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="ParallaxView">
+        <attr name="speed2" format="dimension" />
+        <attr name="src" format="reference" />
+        <attr name="sceneLength" format="integer" />
+        <attr name="randomness" format="reference" />
+        <attr name="initialState" format="enum">
+            <enum name="started" value="0" />
+            <enum name="stopped" value="1" />
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="XYTranlateImageView">
+        <attr name="direction" format="string"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="AutoScrollBanner">
+        <attr name="points_visibility" format="boolean"/>
+        <attr name="points_position" format="enum">
+            <enum name="CENTER" value="0"/>
+            <enum name="LEFT" value="1"/>
+            <enum name="RIGHT" value="2"/>
+        </attr>
+        <attr name="points_container_background" format="reference|color"/>
+    </declare-styleable>
+
+    <declare-styleable name="LoadingIndicatorView">
+        <attr name="minWidth" format="dimension" />
+        <attr name="maxWidth" format="dimension"/>
+        <attr name="minHeight" format="dimension" />
+        <attr name="maxHeight" format="dimension"/>
+        <attr name="indicatorName" format="string"/>
+        <attr name="indicatorColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="BMReceiverTextView">
+        <attr name="autoZoom" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="BMSimpleSeekBar">
+        <attr name="lineColor" format="color"/>
+        <attr name="textColor" format="color"/>
+        <attr name="seekBar" format="reference"/>
+        <attr name="raduis" format="dimension"/>
+        <attr name="margin_line" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="MaterialCircleView">
+
+        <attr name="bGradient" format="boolean"></attr>
+        <attr name="circleColor" format="color"></attr>
+        <attr name="circleWidth" format="dimension"></attr>
+        <attr name="radius" format="dimension"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="MaxScrollViewStyle">
+        <attr name="maxHeight2" format="dimension"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="SVCircleProgressBar">
+        <attr name="roundColor" format="color"/>
+        <attr name="roundProgressColor" format="color"/>
+        <attr name="roundWidth" format="dimension"></attr>
+        <attr name="max" format="integer"></attr>
+        <attr name="style">
+            <enum name="STROKE" value="0"></enum>
+            <enum name="FILL" value="1"></enum>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="MaterialCalendarView">
+
+        <attr name="mcv_dateTextAppearance" format="reference" />
+        <attr name="mcv_weekDayTextAppearance" format="reference" />
+        <attr name="mcv_headerTextAppearance" format="reference" />
+
+        <attr name="mcv_arrowColor" format="color" />
+        <attr name="mcv_leftArrowMask" format="reference" />
+        <attr name="mcv_rightArrowMask" format="reference" />
+        <attr name="mcv_selectionColor" format="color" />
+
+        <attr name="mcv_showOtherDates" format="integer">
+            <flag name="none" value="0" />
+            <flag name="other_months" value="1" />
+            <flag name="out_of_range" value="2" />
+            <flag name="decorated_disabled" value="4" />
+            <flag name="defaults" value="4" />
+            <flag name="all" value="7" />
+        </attr>
+
+        <attr name="mcv_allowClickDaysOutsideCurrentMonth" format="boolean" />
+
+        <attr name="mcv_weekDayLabels" format="reference" />
+        <attr name="mcv_monthLabels" format="reference" />
+
+        <!-- We want to accept match_parent but not wrap_content. It'd be better if we could
+        point to the real match_parent constant, but since it hasn't change since API 1,
+        I think it's safe to hardcode it-->
+        <attr name="mcv_tileSize" format="dimension" >
+            <enum name="match_parent" value="-1" />
+        </attr>
+        <attr name="mcv_tileHeight" format="dimension" >
+            <enum name="match_parent" value="-1" />
+        </attr>
+        <attr name="mcv_tileWidth" format="dimension" >
+            <enum name="match_parent" value="-1" />
+        </attr>
+
+        <attr name="mcv_firstDayOfWeek" format="enum">
+            <enum name="sunday" value="1" />
+            <enum name="monday" value="2" />
+            <enum name="tuesday" value="3" />
+            <enum name="wednesday" value="4" />
+            <enum name="thursday" value="5" />
+            <enum name="friday" value="6" />
+            <enum name="saturday" value="7" />
+        </attr>
+
+        <attr name="mcv_calendarMode" format="enum">
+            <enum name="month" value="0" />
+            <enum name="week" value="1" />
+        </attr>
+
+        <attr name="mcv_titleAnimationOrientation" format="enum">
+            <enum name="vertical" value="0" />
+            <enum name="horizontal" value="1" />
+        </attr>
+
+
+    </declare-styleable>
+
+    <declare-styleable name="exactly">
+        <attr name="exactly_checked" format="boolean" />
+    </declare-styleable>
+
+
 
 </resources>

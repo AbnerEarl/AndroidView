@@ -288,7 +288,32 @@ WheelView wheelView = findViewById(R.id.wheelview);
         });
 ```
 
-
+## 通用圆角Text和Button的用法
+Text style
+```xml
+<com.blue.view.CommonShapeButton
+    android:layout_width="300dp"
+    android:layout_height="50dp"
+    android:layout_margin="10dp"
+    android:text="text+corner+fill"
+    android:textColor="#fff"
+    app:csb_cornerRadius="50dp"
+    app:csb_fillColor="#00bc71" />
+```
+Button style
+```xml
+<com.blue.view.CommonShapeButton
+    style="@style/CommonShapeButtonStyle"
+    android:layout_width="300dp"
+    android:layout_height="50dp"
+    android:layout_margin="10dp"
+    android:text="button+fill+stroke+ripple"
+    android:textColor="#fff"
+    app:csb_activeEnable="true"
+    app:csb_fillColor="#00bc71"
+    app:csb_strokeColor="#000"
+    app:csb_strokeWidth="1dp" />
+```
 
 
 # 主要控件
@@ -357,3 +382,156 @@ TimePickerView —— 时间选择器
 
 ycj52011@outlook.com
 
+# 更多介绍
+
+## Android上的Banner功能使用步骤
+
+### 2，xml声明Banner
+```xml
+    <com.xx.xx.banner.Banner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="180dp" />
+```
+或者使用自定义属性
+```xml
+<com.xx.xx.banner.Banner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:banner_autoLoop="true"
+        app:banner_indicatorBackgroundColor="@android:color/transparent"
+        app:banner_indicatorGravity="center"
+        app:banner_indicatorHeight="16dp"
+        app:banner_indicatorItemHeight="2dp"
+        app:banner_indicatorItemWidth="10dp"
+        app:banner_indicatorItemMargin="3dp"
+        app:banner_indicatorNormalResId="@drawable/sp_line_indicator_normal"
+        app:banner_indicatorPosition="bottom"
+        app:banner_indicatorSelectResId="@drawable/sp_line_indicator_selected"
+        app:banner_infinityLoop="true"
+        app:banner_isDefaultIndicator="true"
+        app:banner_loopInterval="1000"
+        app:banner_pageMargin="0dp"
+        app:banner_pageOffscreenLimit="3"
+        app:banner_scrollDuration="600"
+        app:banner_touchEnable="true" />
+```
+## 3，实现图片加载器（如果使用自定义适配器则可以不用实现）
+```java
+private IBannerImageLoader imageLoader = new IBannerImageLoader() {
+        @Override
+        public void displayImage(Context context, ImageView imageView, Object path) {
+            Glide.with(context).applyDefaultRequestOptions(new RequestOptions().placeholder(R.drawable.img_placeholder)).load(path).into(imageView);
+        }
+
+        @Override
+        public ImageView createImageViewView(Context context) {
+            return null ;
+        }
+    };
+```
+## 设置数据源
+```java
+banner.autoReady(urls, imageLoader, new BannerDefaultAdapter.OnBannerClickListener() {
+            @Override
+            public void onBannerClick(int position, Object resource) {
+
+            }
+        });
+```
+或者使用代码进行详细配置
+```java
+ banner.setAutoLoop(true)
+                .setInfinityLoop(true)
+                .setLoopInterval(1000)
+                .setTouchScrollable(true)
+                .setIsDefaultIndicator(true)
+                .setIndicatorLayoutBackgroundColor(Color.TRANSPARENT)
+                .setIndicatorPosition(Banner.IndicatorPosition.BOTTOM)
+                .setIndicatorGravity(Gravity.CENTER)
+                .setIndicatorHeight(Utils.dp2px(this, 16))
+                .setIndicatorItemWidth(Utils.dp2px(this, 6))
+                .setIndicatorItemHeight(Utils.dp2px(this, 6))
+                .setIndicatorItemMargin(Utils.dp2px(this, 3))
+                .setIndicatorNormalResId(R.drawable.shape_default_indicator_normal)
+                .setIndicatorSelectResId(R.drawable.shape_default_indicator_select)
+                .setOffscreenPageLimit(3)
+                .setScrollDuration(600)
+                .setBannerCLickListener(new BannerDefaultAdapter.OnBannerClickListener() {
+                    @Override
+                    public void onBannerClick(int position, Object resource) {
+
+                    }
+                })
+                .setImageResources(urls)
+                .setImageLoader(imageLoader)
+                .ready();
+```
+
+## 关于指示器
+Banner内置了一个指示器，提供选中、未选中资源设置，大小设置，背景色设置，间距设置。如果默认指示器不能满足，可以自己实现想要的指示器，或者使用其他开源指示器。
+
+### 如何自定义指示器
+以[PageIndicatorView][6]为例，如果想使用该库作为指示器，可以参考以下代码。
+**说明：**[BaseIndicator][7]是继承自LinearLayout，需要做的操作是将指自定义的Indicator通过`addView()`添加进去即可，Banner会在`setAdapter()`之后自动调用`createIndicators()`方法中与内部的ViewPager关联。
+
+```java
+public class PagerIndicatorViewIndicator extends BaseIndicator {
+    private PageIndicatorView pageIndicatorView;
+    private AnimationType animationType = AnimationType.DROP;
+
+    public PagerIndicatorViewIndicator(Context context) {
+        super(context);
+        setGravity(Gravity.CENTER);
+    }
+
+    public PagerIndicatorViewIndicator(Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+        setGravity(Gravity.CENTER);
+    }
+
+    public PagerIndicatorViewIndicator(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        setGravity(Gravity.CENTER);
+    }
+
+    public void setAnimationType(AnimationType animationType) {
+        this.animationType = animationType;
+    }
+
+    @Override
+    protected void onItemSelected(int position) {
+        pageIndicatorView.setSelection(position);
+    }
+
+    @Override
+    protected void onItemScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        pageIndicatorView.onPageScrolled(position, positionOffset, positionOffsetPixels);
+    }
+
+    @Override
+    protected void createIndicators(int itemCount) {
+        pageIndicatorView = new PageIndicatorView(getContext());
+        int height = animationType == AnimationType.DROP? Utils.dp2px(getContext(), 16) : Utils.dp2px(getContext(), 10);
+        pageIndicatorView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, height));
+        pageIndicatorView.setDynamicCount(true);
+        pageIndicatorView.setSelected(Color.RED);
+        pageIndicatorView.setUnselectedColor(Color.GRAY);
+        pageIndicatorView.setInteractiveAnimation(true);
+        pageIndicatorView.setRadius(3);
+        pageIndicatorView.setAnimationType(animationType);
+        addView(pageIndicatorView);
+    }
+}
+```
+
+## 关于切换动画
+`Banner`提供了`setPageTransformer()`方法，该方法调用了内部的`ViewPager#setPageTransformer()`方法。
+`Banner`提供内置动画有：
+
+* CardPageTransform
+* CubeOutPageTransform
+* DepthPageTransform
+* RotateDownPageTransform
+* ZoomOutPageTransformer
